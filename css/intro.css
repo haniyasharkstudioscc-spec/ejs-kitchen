@@ -1,0 +1,89 @@
+/* ==========================================================================
+   EJ'S KITCHEN - TRANSITION INTRO & BRAND MOTION STRIP
+   ========================================================================== */
+
+.intro-transition-section {
+  position: relative;
+  padding: 3.5rem 0 3rem;
+  background-color: var(--color-cream);
+  overflow: hidden;
+  text-align: center;
+}
+
+.intro-content-wrapper {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Eyebrow */
+.intro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 0.5rem;
+}
+
+/* Main Editorial Heading */
+.intro-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  color: var(--color-chocolate-dark);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.015em;
+}
+
+.intro-heading .intro-heading-sub {
+  display: block;
+  font-family: var(--font-handwritten);
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 600;
+  color: var(--color-terracotta);
+  margin-top: 0.1rem;
+  line-height: 1;
+}
+
+/* Supporting Copy */
+.intro-copy {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.65;
+  color: var(--color-chocolate-medium);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Scroll reveal trigger state */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease-cinematic), transform 0.7s var(--ease-cinematic);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+@media (max-width: 768px) {
+  .intro-transition-section {
+    padding: 2.5rem 0 2rem;
+  }
+}

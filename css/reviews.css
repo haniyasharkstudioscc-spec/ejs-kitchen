@@ -1,0 +1,579 @@
+/* ==========================================================================
+   EJ'S KITCHEN - CUSTOMER REVIEWS & TESTIMONIALS + LIGHTBOX MODAL
+   WhatsApp Conversation Cards, Full-Screenshot Visibility & Lightbox Preview
+   ========================================================================== */
+
+.reviews-section {
+  position: relative;
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-cream-subtle);
+  border-top: 1px solid rgba(46, 27, 19, 0.06);
+  border-bottom: 1px solid rgba(46, 27, 19, 0.06);
+  overflow: hidden;
+}
+
+/* Header */
+.reviews-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.reviews-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-2xs);
+}
+
+.reviews-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: var(--fw-bold);
+  color: var(--color-chocolate-dark);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-2xs);
+}
+
+.reviews-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--color-chocolate-light);
+  font-weight: var(--fw-regular);
+}
+
+/* Carousel Container */
+.reviews-carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  z-index: var(--z-content);
+}
+
+.reviews-viewport {
+  overflow: hidden;
+  position: relative;
+  padding: var(--space-md) var(--space-xs) var(--space-lg);
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.reviews-viewport:active {
+  cursor: grabbing;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s var(--ease-cinematic);
+  will-change: transform;
+}
+
+/* Review Card Component */
+.review-card {
+  flex: 0 0 380px;
+  width: 380px;
+  max-width: 380px;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(46, 27, 19, 0.08);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  opacity: 0.75;
+  transform: scale(0.94);
+  transition: transform 0.45s var(--ease-cinematic), opacity 0.45s var(--ease-cinematic), box-shadow 0.35s ease, border-color 0.35s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.review-card.is-active {
+  opacity: 1;
+  transform: scale(1.02);
+  border-color: rgba(37, 211, 102, 0.45);
+  box-shadow: 0 16px 40px -8px rgba(46, 27, 19, 0.12), 0 0 0 1px rgba(37, 211, 102, 0.25);
+  background: #FFFFFF;
+}
+
+.review-card:hover {
+  opacity: 1;
+  box-shadow: var(--shadow-md);
+}
+
+/* Header */
+.review-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(46, 27, 19, 0.06);
+}
+
+.review-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.review-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-terracotta-soft);
+  color: var(--color-terracotta-dark);
+  font-family: var(--font-serif);
+  font-weight: var(--fw-bold);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(200, 109, 81, 0.2);
+}
+
+.review-name-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-user-name {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: 0.92rem;
+  color: var(--color-chocolate-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.review-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-whatsapp-dark);
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+
+.review-user-meta {
+  font-size: 0.72rem;
+  color: var(--color-chocolate-muted);
+}
+
+.review-wa-badge svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-whatsapp-dark);
+}
+
+/* Screenshot Box - Authentic & Full Display (No Crop) */
+.review-screenshot-box {
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  background-color: #0B141A; /* Authentic WhatsApp Dark Theme */
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.review-screenshot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.review-card:hover .review-screenshot-img {
+  transform: scale(1.02);
+}
+
+/* Click to Enlarge Hint Badge */
+.review-expand-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(11, 20, 26, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #E9EDEF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+  transition: background-color 0.2s ease;
+}
+
+.review-expand-hint svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.review-card:hover .review-expand-hint {
+  background: var(--color-terracotta);
+  color: #FFFFFF;
+}
+
+/* Chat Bubble Fallback */
+.review-chat-bubble {
+  background-color: #E7FCE8;
+  border-radius: var(--radius-md) var(--radius-md) var(--radius-xs) var(--radius-md);
+  padding: 0.95rem 1.1rem;
+  margin-bottom: 0.85rem;
+  position: relative;
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.review-stars {
+  color: #E2A03F;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.1em;
+}
+
+.review-text {
+  font-size: 0.88rem;
+  color: var(--color-chocolate);
+  line-height: 1.48;
+  font-style: italic;
+}
+
+/* Card Footer */
+.review-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.review-order-pill {
+  font-size: 0.74rem;
+  color: var(--color-terracotta-dark);
+  font-weight: var(--fw-semibold);
+}
+
+.review-location-tag {
+  font-size: 0.72rem;
+  color: var(--color-chocolate-muted);
+}
+
+/* Navigation Controls & Counter */
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.reviews-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 27, 19, 0.15);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.reviews-nav-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-chocolate);
+  transition: fill var(--transition-fast);
+}
+
+.reviews-nav-btn:hover:not(:disabled) {
+  background: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+  transform: scale(1.06);
+}
+
+.reviews-nav-btn:hover:not(:disabled) svg {
+  fill: #FFFFFF;
+}
+
+.reviews-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.reviews-counter-text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-chocolate-medium);
+  letter-spacing: 0.1em;
+}
+
+.reviews-counter-current {
+  color: var(--color-terracotta);
+}
+
+/* ==========================================================================
+   FULLSCREEN HIGH-RES LIGHTBOX MODAL
+   ========================================================================== */
+.image-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-cinematic), visibility 0.3s ease;
+}
+
+.image-lightbox-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 6, 4, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.94);
+  transition: transform 0.3s var(--ease-cinematic);
+  pointer-events: auto;
+}
+
+.image-lightbox-modal.is-open .lightbox-container {
+  transform: scale(1);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.lightbox-close-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #FFFFFF;
+  pointer-events: none;
+}
+
+.lightbox-close-btn:hover {
+  background: var(--color-terracotta);
+  transform: rotate(90deg) scale(1.08);
+  box-shadow: 0 4px 16px rgba(200, 109, 81, 0.4);
+}
+
+.lightbox-image-wrapper {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  background: #110A07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption {
+  margin-top: 0.85rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.4;
+  background: rgba(20, 10, 6, 0.65);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .reviews-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .review-card {
+    flex: 0 0 340px;
+    width: 340px;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .reviews-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .reviews-viewport {
+    padding: var(--space-sm) 0 var(--space-md);
+  }
+
+  .reviews-track {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .review-card {
+    flex: 0 0 290px;
+    width: 290px;
+    max-width: 85vw;
+    padding: 1.1rem;
+  }
+
+  .review-screenshot-box {
+    height: 260px;
+  }
+
+  .lightbox-close-btn {
+    top: -42px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-track {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .review-card {
+    flex: 0 0 calc(100vw - 3.2rem);
+    width: calc(100vw - 3.2rem);
+    max-width: 320px;
+    padding: 1rem 0.9rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .review-screenshot-box {
+    height: 220px;
+  }
+
+  .review-card-chat-bubble {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .review-text {
+    font-size: 0.82rem;
+  }
+
+  .reviews-controls {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .reviews-nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .image-lightbox-modal {
+    padding: 0.75rem;
+  }
+
+  .lightbox-image-wrapper {
+    max-width: 95vw;
+    max-height: 72vh;
+  }
+
+  .lightbox-img {
+    max-width: 95vw;
+    max-height: 72vh;
+  }
+
+  .lightbox-close-btn {
+    top: -40px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .lightbox-caption {
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+  }
+}

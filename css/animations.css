@@ -1,0 +1,120 @@
+/* ==========================================================================
+   EJ'S KITCHEN - MOTION & ANIMATIONS SYSTEM
+   Smooth, Soft, Cinematic, Respects Reduced Motion
+   ========================================================================== */
+
+/* Keyframe Animations */
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Hero Sequence Classes */
+.hero-reveal-init .hero-media-wrapper {
+  opacity: 0;
+  transition: opacity 1s var(--ease-cinematic);
+}
+
+.hero-reveal-init .hero-logo-wrapper,
+.hero-reveal-init .hero-eyebrow,
+.hero-reveal-init .hero-title,
+.hero-reveal-init .hero-btn-primary,
+.hero-reveal-init .hero-scroll-indicator {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease-cinematic), transform 0.7s var(--ease-cinematic);
+}
+
+.hero-reveal-active .hero-media-wrapper {
+  opacity: 1;
+}
+
+.hero-reveal-active .hero-logo-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.hero-reveal-active .hero-eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.22s;
+}
+
+.hero-reveal-active .hero-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.36s;
+}
+
+.hero-reveal-active .hero-btn-primary {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.hero-reveal-active .hero-scroll-indicator {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.75s;
+}
+
+/* Accessible Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .site-loader {
+    display: none !important;
+  }
+
+  .hero-reveal-init .hero-logo-wrapper,
+  .hero-reveal-init .hero-eyebrow,
+  .hero-reveal-init .hero-title,
+  .hero-reveal-init .hero-btn-primary,
+  .hero-reveal-init .hero-scroll-indicator,
+  .hero-reveal-init .hero-media-wrapper,
+  .reveal-on-scroll,
+  .gallery-reveal,
+  .product-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

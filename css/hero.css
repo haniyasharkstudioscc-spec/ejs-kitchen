@@ -1,0 +1,302 @@
+/* ==========================================================================
+   EJ'S KITCHEN - HERO SECTION
+   Clean, Crisp Cinematic Video Focus, Minimal Luxury Typography
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-chocolate-dark);
+}
+
+/* Background Video Container */
+.hero-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-bg);
+  overflow: hidden;
+}
+
+/* The actual HTML5 Video Element - High Clarity, Crisp & Visible */
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(102%) saturate(104%);
+  will-change: transform;
+}
+
+/* Subtle, Light Dark/Warm Overlay ONLY for Text Readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 13, 8, 0.45) 0%,
+    rgba(25, 13, 8, 0.22) 40%,
+    rgba(25, 13, 8, 0.35) 70%,
+    rgba(25, 13, 8, 0.65) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hero Content Area - Balanced Vertical Flow */
+.hero-content {
+  position: relative;
+  z-index: var(--z-content);
+  width: 100%;
+  padding-top: 6.5rem;
+  padding-bottom: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Hero Logo Emblem */
+.hero-logo-wrapper {
+  margin-bottom: 1.25rem;
+}
+
+.hero-logo-img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.hero-logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Eyebrow Welcome Text */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 1.25rem;
+  background: rgba(253, 251, 247, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-rose-light);
+}
+
+/* Main Editorial Heading */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin-bottom: 2rem;
+  letter-spacing: -0.015em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title .title-line {
+  display: block;
+}
+
+.hero-title .italic-accent {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-rose-light);
+  font-family: var(--font-serif);
+}
+
+/* CTA Button Group */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btn-primary {
+  padding: 1.05rem 2.5rem;
+  font-size: 0.96rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(200, 109, 81, 0.4);
+}
+
+/* Minimal Downward Scroll Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(253, 251, 247, 0.8);
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-scroll-indicator.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+}
+
+.scroll-arrow-box {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: rgba(253, 251, 247, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: bounceDown 2.2s ease-in-out infinite;
+  transition: background-color 0.25s ease;
+}
+
+.hero-scroll-indicator:hover .scroll-arrow-box {
+  background: rgba(253, 251, 247, 0.25);
+}
+
+.scroll-arrow-svg {
+  width: 14px;
+  height: 14px;
+  stroke: #FFFFFF;
+  stroke-width: 2.2;
+  fill: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .hero-content {
+    padding-top: 6rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 5.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-logo-img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1.15rem;
+    padding: 0.35rem 1rem;
+  }
+
+  .eyebrow-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 8vw, 2.9rem);
+    line-height: 1.18;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-btn-primary {
+    padding: 0.95rem 2.1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding-top: 4.8rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-logo-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 0.9rem;
+    padding: 0.3rem 0.85rem;
+  }
+
+  .eyebrow-text {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 8.5vw, 2.35rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-btn-primary {
+    padding: 0.85rem 1.85rem;
+    font-size: 0.86rem;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 0.85rem;
+  }
+
+  .scroll-arrow-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .scroll-arrow-svg {
+    width: 12px;
+    height: 12px;
+  }
+}

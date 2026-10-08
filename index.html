@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EJ’s Kitchen | Homemade Goodness Made with Love in Al Rehman Garden Phase 2</title>
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+  <link rel="apple-touch-icon" href="logo.jpeg">
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="EJ’s Kitchen — Freshly made comfort food, sweet treats & homemade favourites from our kitchen in Al Rehman Garden Phase 2. Warm, wholesome, made with love.">
+  <meta name="theme-color" content="#2E1B13">
+  <meta property="og:title" content="EJ’s Kitchen | Homemade Goodness, Made with Love">
+  <meta property="og:description" content="Freshly made comfort food, sweet treats & homemade favourites from our kitchen in Al Rehman Garden Phase 2.">
+  <meta property="og:image" content="logo.jpeg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/deals.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/kitchen.css">
+  <link rel="stylesheet" href="css/reviews.css">
+  <link rel="stylesheet" href="css/cta-footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="loading">
+
+  <!-- ========================================================================
+       1. CUTE LOADING EXPERIENCE (1.4s Max)
+       ======================================================================== -->
+  <div id="siteLoader" class="site-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-emblem">
+        <img src="logo.jpeg" alt="EJ’s Kitchen Logo" class="loader-logo-img">
+      </div>
+      <h1 class="loader-brand">EJ’s Kitchen</h1>
+      <div class="loader-tagline">
+        <span>homemade with love</span>
+        <svg class="loader-heart-icon" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. STICKY NAVBAR (Desktop & Mobile)
+       ======================================================================== -->
+  <header id="siteHeader" class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Brand Logo -->
+        <a href="#hero" class="brand-logo" aria-label="EJ’s Kitchen Home">
+          <img src="logo.jpeg" alt="EJ’s Kitchen Logo" class="brand-logo-img">
+          <span>EJ’S KITCHEN</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <a href="#hero" class="nav-link active">HOME</a>
+          <a href="#deals" class="nav-link">DEALS</a>
+          <a href="#menu" class="nav-link">MENU</a>
+          <a href="#kitchen" class="nav-link">OUR KITCHEN</a>
+          <a href="#reviews" class="nav-link">REVIEWS</a>
+        </nav>
+
+        <!-- Right Side CTA -->
+        <div class="nav-actions">
+          <a href="#" class="btn btn-whatsapp nav-btn-whatsapp desktop-only" data-action="whatsapp">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67"/>
+              <path transform="translate(-1.8, -1.0)" d="M9.53 7.33C9.33 7.33 9 7.41 8.73 7.71C8.45 8.01 7.68 8.74 7.68 10.21C7.68 11.68 8.75 13.1 8.9 13.3C9.05 13.5 11.02 16.54 14.03 17.84C14.75 18.15 15.31 18.34 15.75 18.48C16.48 18.71 17.14 18.68 17.66 18.6C18.24 18.51 19.45 17.87 19.7 17.16C19.95 16.46 19.95 15.86 19.88 15.73C19.8 15.61 19.6 15.54 19.3 15.39C19 15.24 17.53 14.51 17.25 14.41C16.98 14.31 16.78 14.26 16.58 14.56C16.38 14.86 15.8 15.54 15.63 15.74C15.45 15.94 15.28 15.96 14.98 15.81C14.68 15.66 13.72 15.35 12.58 14.34C11.69 13.55 11.09 12.57 10.92 12.27C10.74 11.97 10.9 11.81 11.05 11.66C11.19 11.53 11.35 11.31 11.5 11.14C11.66 10.96 11.71 10.84 11.81 10.64C11.91 10.43 11.86 10.26 11.79 10.11C11.71 9.96 11.13 8.54 10.89 7.96C10.65 7.4 10.42 7.47 10.24 7.47C10.07 7.46 9.87 7.33 9.53 7.33Z"/>
+            </svg>
+            <span>ORDER</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. MOBILE OVERLAY MENU
+       ======================================================================== -->
+  <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li>
+        <a href="#hero" class="mobile-nav-link">
+          <span>HOME</span>
+          <span class="link-doodle">01</span>
+        </a>
+      </li>
+      <li>
+        <a href="#deals" class="mobile-nav-link">
+          <span>DEALS</span>
+          <span class="link-doodle">02</span>
+        </a>
+      </li>
+      <li>
+        <a href="#menu" class="mobile-nav-link">
+          <span>MENU</span>
+          <span class="link-doodle">03</span>
+        </a>
+      </li>
+      <li>
+        <a href="#kitchen" class="mobile-nav-link">
+          <span>OUR KITCHEN</span>
+          <span class="link-doodle">04</span>
+        </a>
+      </li>
+      <li>
+        <a href="#reviews" class="mobile-nav-link">
+          <span>REVIEWS</span>
+          <span class="link-doodle">05</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="#" class="btn btn-whatsapp" data-action="whatsapp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67"/>
+          <path transform="translate(-1.8, -1.0)" d="M9.53 7.33C9.33 7.33 9 7.41 8.73 7.71C8.45 8.01 7.68 8.74 7.68 10.21C7.68 11.68 8.75 13.1 8.9 13.3C9.05 13.5 11.02 16.54 14.03 17.84C14.75 18.15 15.31 18.34 15.75 18.48C16.48 18.71 17.14 18.68 17.66 18.6C18.24 18.51 19.45 17.87 19.7 17.16C19.95 16.46 19.95 15.86 19.88 15.73C19.8 15.61 19.6 15.54 19.3 15.39C19 15.24 17.53 14.51 17.25 14.41C16.98 14.31 16.78 14.26 16.58 14.56C16.38 14.86 15.8 15.54 15.63 15.74C15.45 15.94 15.28 15.96 14.98 15.81C14.68 15.66 13.72 15.35 12.58 14.34C11.69 13.55 11.09 12.57 10.92 12.27C10.74 11.97 10.9 11.81 11.05 11.66C11.19 11.53 11.35 11.31 11.5 11.14C11.66 10.96 11.71 10.84 11.81 10.64C11.91 10.43 11.86 10.26 11.79 10.11C11.71 9.96 11.13 8.54 10.89 7.96C10.65 7.4 10.42 7.47 10.24 7.47C10.07 7.46 9.87 7.33 9.53 7.33Z"/>
+        </svg>
+        <span>GET YOURS</span>
+      </a>
+      <div class="mobile-location-tag">
+        📍 Al Rehman Garden Phase 2, Lahore • Baked with Love
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       4. CLEAN CINEMATIC HERO SECTION
+       ======================================================================== -->
+  <main id="mainContent">
+    <section id="hero" class="hero-section">
+      
+      <!-- Video / Cinematic Background Media Wrapper -->
+      <div class="hero-media-wrapper" aria-hidden="true">
+        <!-- Video Element: clear & visible background food footage -->
+        <video 
+          id="heroVideo"
+          class="hero-video" 
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          webkit-playsinline
+          preload="auto">
+          <source src="assets/hero-video.mp4" type="video/mp4">
+          <source src="hero-video.mp4" type="video/mp4">
+          <source src="burger 2 hero section video.mp4" type="video/mp4">
+        </video>
+
+        <!-- Subtle warm overlay for text legibility without obscuring the food -->
+        <div class="hero-overlay"></div>
+      </div>
+
+      <!-- Hero Main Content -->
+      <div class="container hero-content">
+        <div class="hero-inner">
+          
+          <!-- Hero Brand Logo Emblem (Clean logo only - no duplicate text) -->
+          <div class="hero-logo-wrapper">
+            <img src="logo.jpeg" alt="EJ’s Kitchen Logo" class="hero-logo-img">
+          </div>
+
+          <!-- Eyebrow Welcome Text -->
+          <div class="hero-eyebrow">
+            <span class="eyebrow-text">WELCOME TO EJ’S KITCHEN</span>
+          </div>
+
+          <!-- Main Editorial Heading -->
+          <h1 class="hero-title">
+            <span class="title-line">HOMEMADE GOODNESS,</span>
+            <span class="title-line italic-accent">MADE WITH LOVE.</span>
+          </h1>
+
+          <!-- Main Hero CTA Button -->
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn btn-primary hero-btn-primary">
+              <span>EXPLORE MENU</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Minimal Animated Downward Scroll Indicator -->
+      <a href="#intro" id="heroScrollIndicator" class="hero-scroll-indicator" aria-label="Scroll to explore menu">
+        <div class="scroll-arrow-box">
+          <svg class="scroll-arrow-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- ========================================================================
+         5. EDITORIAL INTRO SECTION
+         ======================================================================== -->
+    <section id="intro" class="intro-transition-section">
+      <div class="intro-content-wrapper">
+        <div class="intro-eyebrow reveal-on-scroll reveal-delay-1">
+          <span>A LITTLE TASTE OF</span>
+        </div>
+
+        <h2 class="intro-heading reveal-on-scroll reveal-delay-2">
+          A LITTLE TASTE OF
+          <span class="intro-heading-sub">EJ’S KITCHEN</span>
+        </h2>
+
+        <p class="intro-copy reveal-on-scroll reveal-delay-3">
+          Freshly made comfort food, sweet treats and homemade favourites, prepared with genuine care in our kitchen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. SPECIAL MEAL DEALS (Compact, Cute, Interactive Carousel)
+         ======================================================================== -->
+    <section id="deals" class="deals-section">
+      <div class="deals-header reveal-on-scroll">
+        <div class="deals-eyebrow">
+          <span>✦ CHEF’S COMBINATIONS</span>
+        </div>
+        <h2 class="deals-title">SPECIAL MEAL DEALS</h2>
+        <p class="deals-subtitle">Good food tastes even better together.</p>
+      </div>
+
+      <div class="deals-carousel-wrapper">
+        <!-- Interactive Horizontal Carousel Viewport -->
+        <div id="dealsViewport" class="deals-carousel-viewport">
+          <div id="dealsTrack" class="deals-track">
+            <!-- Dynamic deal cards rendered from js/menu-data.js -->
+          </div>
+        </div>
+
+        <!-- Navigation Controls & Counter -->
+        <div class="deals-nav-controls">
+          <button id="dealsPrevBtn" class="deals-nav-btn" aria-label="Previous deal">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+          
+          <div id="dealsCounter" class="deals-counter-text">
+            <span class="deals-counter-current">01</span> / <span class="deals-counter-total">08</span>
+          </div>
+
+          <button id="dealsNextBtn" class="deals-nav-btn" aria-label="Next deal">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. EXPLORE THE MENU & PRODUCT GRID
+         ======================================================================== -->
+    <section id="menu" class="menu-section">
+      <!-- Background pattern -->
+      <div class="menu-bg-pattern" aria-hidden="true">
+        <svg viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
+          <path d="M-100,120 C300,190 600,60 1000,160 C1300,240 1500,100 1600,140" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="6 6"/>
+          <path d="M-50,280 C250,340 550,220 950,310 C1250,390 1450,270 1550,300" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M-80,440 C320,510 620,380 1020,480 C1320,560 1520,430 1620,460" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="8 8"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <!-- Section Header -->
+        <div class="menu-header reveal-on-scroll">
+          <div class="menu-eyebrow">
+            <span>✦ HOMEMADE SPECIALITIES</span>
+          </div>
+          <h2 class="menu-title">EXPLORE THE MENU</h2>
+          <p class="menu-subtitle">WHAT ARE YOU CRAVING?</p>
+        </div>
+
+        <!-- 3D Category Selection Carousel -->
+        <div class="category-carousel-stage">
+          <div id="categoryCarouselViewport" class="category-carousel-viewport">
+            <div id="categoryTrack" class="category-track">
+              <!-- Dynamic Category Cards rendered from js/menu-data.js -->
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="category-controls">
+            <button id="categoryPrevBtn" class="category-nav-btn" aria-label="Previous menu category">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+
+            <div id="categoryCounter" class="category-counter-text">
+              <span class="category-counter-current">01</span> / <span class="category-counter-total">04</span>
+            </div>
+
+            <button id="categoryNextBtn" class="category-nav-btn" aria-label="Next menu category">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Direct Transition to Animated Product Grid -->
+        <div class="menu-products-section">
+          <div id="productsGrid" class="products-grid">
+            <!-- Dynamic Products rendered from js/menu-data.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         9. INSIDE OUR KITCHEN (Editorial Food Showcase)
+         ======================================================================== -->
+    <section id="kitchen" class="kitchen-section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="kitchen-header reveal-on-scroll">
+          <div class="kitchen-eyebrow">
+            <span>✦ FROM OUR HOME TO YOUR TABLE</span>
+          </div>
+          <h2 class="kitchen-title">INSIDE OUR KITCHEN</h2>
+          <p class="kitchen-subtitle">HOMEMADE WITH CARE & LOVE</p>
+          <p class="kitchen-intro-text">
+            A visual journey into our daily baking and cooking — from fresh raw ingredients to warm, oven-fresh creations.
+          </p>
+        </div>
+
+        <!-- Editorial Gallery Feed (8 Specific Authentic Items - Zero Cropping) -->
+        <div cl          <!-- Story Pair 1: Artisan Handcrafted Pizza -->
+          <div class="kitchen-story-row">
+            <!-- 01: Pizza Going into Oven -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-pizza" data-lightbox-src="pics of reviews and gallery/pizza before.jpeg" data-caption="Hand-Crafted Pizza • Fresh Dough, Herb Marinara, Spiced Chicken, Olives & Cheese">
+              <div class="kitchen-card-media media-tall">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Step 01 • Prep & Toppings</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/pizza before.jpeg" 
+                  alt="Pizza going into the oven at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ ARTISAN BAKING</span>
+                <h3 class="kitchen-card-title">Pizza Going Into The Oven</h3>
+                <p class="kitchen-card-desc">
+                  Fresh homemade dough hand-stretched and layered with rich tomato sauce, tender seasoned chicken chunks, black olives, and shredded mozzarella.
+                </p>
+              </div>
+            </div>
+
+            <!-- 02: Finished Pizza Out of Oven -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-pizza" data-lightbox-src="pics of reviews and gallery/pizza in oven after.jpeg" data-caption="Oven-Baked Pizza • Melty Golden Cheese & Fluffy Hand-Tossed Crust">
+              <div class="kitchen-card-media media-tall">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Step 02 • Oven Fresh</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/pizza in oven after.jpeg" 
+                  alt="Finished pizza baked in the oven at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ OVEN PERFECTION</span>
+                <h3 class="kitchen-card-title">Finished Golden Pizza</h3>
+                <p class="kitchen-card-desc">
+                  Baked to golden perfection with molten cheese, blistered crust, and steaming aroma straight from our kitchen oven.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Pair 2: Handcrafted Cupcake Studio -->
+          <div class="kitchen-story-row">
+            <!-- 03: Cupcakes Being Decorated with Cream -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-cupcake" data-lightbox-src="pics of reviews and gallery/cup cakes im process.jpeg" data-caption="Hand-Decorating Cupcakes • Swirling Fresh Rosette Strawberry Buttercream">
+              <div class="kitchen-card-media media-tall">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Handcrafted • Piping Rosettes</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/cup cakes im process.jpeg" 
+                  alt="Cupcakes being decorated with cream at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ SWEET CREATIONS</span>
+                <h3 class="kitchen-card-title">Cupcakes Being Decorated With Cream</h3>
+                <p class="kitchen-card-desc">
+                  Every sponge is hand-piped with rich, silky cream swirls in our studio with the trademark framed EJ’s Kitchen warmth.
+                </p>
+              </div>
+            </div>
+
+            <!-- 04: Finished Cupcakes -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-cupcake" data-lightbox-src="pics of reviews and gallery/cup cakes full.jpeg" data-caption="Finished Cupcakes Batch • Topped with Rainbow Sprinkles & Framed EJ’s Kitchen Logo">
+              <div class="kitchen-card-media media-tall">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Finished Batch • Ready To Box</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/cup cakes full.jpeg" 
+                  alt="Finished decorated cupcakes at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ FRESH BAKES</span>
+                <h3 class="kitchen-card-title">Finished Cupcakes</h3>
+                <p class="kitchen-card-desc">
+                  Melt-in-your-mouth vanilla cupcakes crowned with glossy rosettes and celebration confetti sprinkles.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Pair 3: Small-Batch Cookie Oven -->
+          <div class="kitchen-story-row">
+            <!-- 05: Cookies Going into the Oven -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-cookie" data-lightbox-src="pics of reviews and gallery/cookiessa.jpeg" data-caption="Chocolate Chip Cookie Dough • Hand-Rolled Choc-Chips on Baking Tray">
+              <div class="kitchen-card-media">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Step 01 • Cookie Dough Tray</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/cookiessa.jpeg" 
+                  alt="Cookies going into the oven at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ ARTISAN COOKIES</span>
+                <h3 class="kitchen-card-title">Cookies Going Into The Oven</h3>
+                <p class="kitchen-card-desc">
+                  Generous cookie dough balls loaded with chocolate chips, lined on baking parchment ready for the heat.
+                </p>
+              </div>
+            </div>
+
+            <!-- 06: Finished Cookies -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-cookie" data-lightbox-src="pics of reviews and gallery/cookies oven.jpeg" data-caption="Warm Finished Cookies • Golden Baked with Gooey Chocolate Chunks">
+              <div class="kitchen-card-media">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Step 02 • Fresh Baked</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/cookies oven.jpeg" 
+                  alt="Finished baked cookies in the oven at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ FRESH FROM OVEN</span>
+                <h3 class="kitchen-card-title">Finished Cookies</h3>
+                <p class="kitchen-card-desc">
+                  Crisp on the edges, soft in the center, and bursting with warm molten chocolate straight out of the oven.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Pair 4: Savory Sides & Homemade Loaves -->
+          <div class="kitchen-story-row">
+            <!-- 07: Fries -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-fries" data-lightbox-src="pics of reviews and gallery/fries.jpeg" data-caption="Homemade Fries Platter • Golden Crisp Potato Fries Served Fresh">
+              <div class="kitchen-card-media">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Savory Speciality • Crisp & Hot</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/fries.jpeg" 
+                  alt="Fresh potato fries at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ SAVORY FAVOURITE</span>
+                <h3 class="kitchen-card-title">Fresh Homemade Fries</h3>
+                <p class="kitchen-card-desc">
+                  Golden, steaming hot potato fries plated beside our signature emblem, seasoned and fried fresh on every order.
+                </p>
+              </div>
+            </div>
+
+            <!-- 08: Marble cake being held -->
+            <div class="kitchen-card card-span-6 gallery-reveal card-theme-cake" data-lightbox-src="pics of reviews and gallery/marbel cake.jpeg" data-caption="Signature Marble Cake • Handcrafted Swirl Loaf & Slices">
+              <div class="kitchen-card-media">
+                <div class="kitchen-zoom-hint">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  <span>View Full Photo</span>
+                </div>
+                <div class="kitchen-step-pill">
+                  <span class="kitchen-step-dot"></span>
+                  <span>Handcrafted • Marble Swirl</span>
+                </div>
+                <img 
+                  src="pics of reviews and gallery/marbel cake.jpeg" 
+                  alt="Marble cake being held at EJ’s Kitchen" 
+                  class="kitchen-card-img" 
+                  loading="lazy"
+                >
+              </div>
+              <div class="kitchen-card-body">
+                <span class="kitchen-card-tag">✦ SIGNATURE BAKE</span>
+                <h3 class="kitchen-card-title">Marble Cake Being Held</h3>
+                <p class="kitchen-card-desc">
+                  Tender swirl muffin and sliced marble cake loaves freshly baked with cocoa and vanilla marbling, boxed with love.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         10. INSTAGRAM BANNER (Real @ejs.kitchen_ profile)
+         ======================================================================== -->
+    <section id="instagramBanner" class="instagram-banner-section">
+      <div class="container">
+        <div class="instagram-banner-card reveal-on-scroll">
+          <div class="instagram-banner-left">
+            <div class="instagram-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <div class="instagram-banner-text">
+              <h3 class="instagram-banner-title">FOLLOW THE KITCHEN</h3>
+              <p class="instagram-banner-desc">Fresh bakes, behind-the-scenes moments & daily updates @ejs.kitchen_</p>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/ejs.kitchen_/" target="_blank" rel="noopener noreferrer" class="instagram-cta-btn">
+            <span>FOLLOW US ON INSTAGRAM</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         11. CUSTOMER LOVE & REVIEWS (Interactive Testimonials Carousel)
+         ======================================================================== -->
+    <section id="reviews" class="reviews-section">
+      <div class="reviews-header reveal-on-scroll">
+        <div class="reviews-eyebrow">
+          <span>✦ WHAT OUR COMMUNITY SAYS</span>
+        </div>
+        <h2 class="reviews-title">CUSTOMER LOVE</h2>
+        <p class="reviews-subtitle">A FEW WORDS FROM OUR CUSTOMERS</p>
+      </div>
+
+      <div class="reviews-carousel-wrapper">
+        <!-- Interactive Horizontal WhatsApp Testimonials Viewport -->
+        <div id="reviewsViewport" class="reviews-viewport">
+          <div id="reviewsTrack" class="reviews-track">
+            <!-- Dynamic WhatsApp conversation cards rendered from js/menu-data.js -->
+          </div>
+        </div>
+
+        <!-- Navigation Controls & Counter -->
+        <div class="reviews-controls">
+          <button id="reviewsPrevBtn" class="reviews-nav-btn" aria-label="Previous customer review">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+          
+          <div id="reviewsCounter" class="reviews-counter-text">
+            <span class="reviews-counter-current">01</span> / <span class="reviews-counter-total">04</span>
+          </div>
+
+          <button id="reviewsNextBtn" class="reviews-nav-btn" aria-label="Next customer review">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         12. FINAL CINEMATIC ORDER CTA
+         ======================================================================== -->
+    <section id="cta" class="final-cta-section">
+      <div class="final-cta-bg-wrapper" aria-hidden="true">
+        <div class="final-cta-bg-gradient"></div>
+        <div class="final-cta-grain"></div>
+      </div>
+
+      <div class="final-cta-inner">
+        <div class="final-cta-eyebrow reveal-on-scroll reveal-delay-1">
+          <span>✦ BAKED WITH LOVE</span>
+        </div>
+
+        <h2 class="final-cta-heading reveal-on-scroll reveal-delay-2">
+          CRAVING SOMETHING?
+        </h2>
+
+        <p class="final-cta-subtitle reveal-on-scroll reveal-delay-3">
+          Baked with Love • Fresh • Hygienic • Homemade • Made to Order
+        </p>
+
+        <div class="reveal-on-scroll reveal-delay-4">
+          <a href="#" id="finalCtaWhatsAppBtn" class="final-cta-btn-whatsapp" data-action="whatsapp">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67"/>
+              <path transform="translate(-1.8, -1.0)" d="M9.53 7.33C9.33 7.33 9 7.41 8.73 7.71C8.45 8.01 7.68 8.74 7.68 10.21C7.68 11.68 8.75 13.1 8.9 13.3C9.05 13.5 11.02 16.54 14.03 17.84C14.75 18.15 15.31 18.34 15.75 18.48C16.48 18.71 17.14 18.68 17.66 18.6C18.24 18.51 19.45 17.87 19.7 17.16C19.95 16.46 19.95 15.86 19.88 15.73C19.8 15.61 19.6 15.54 19.3 15.39C19 15.24 17.53 14.51 17.25 14.41C16.98 14.31 16.78 14.26 16.58 14.56C16.38 14.86 15.8 15.54 15.63 15.74C15.45 15.94 15.28 15.96 14.98 15.81C14.68 15.66 13.72 15.35 12.58 14.34C11.69 13.55 11.09 12.57 10.92 12.27C10.74 11.97 10.9 11.81 11.05 11.66C11.19 11.53 11.35 11.31 11.5 11.14C11.66 10.96 11.71 10.84 11.81 10.64C11.91 10.43 11.86 10.26 11.79 10.11C11.71 9.96 11.13 8.54 10.89 7.96C10.65 7.4 10.42 7.47 10.24 7.47C10.07 7.46 9.87 7.33 9.53 7.33Z"/>
+            </svg>
+            <span>GET YOURS</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       13. MINIMAL LUXURY FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-header">
+            <img src="logo.jpeg" alt="EJ’s Kitchen Logo" class="footer-brand-logo-img">
+            <div class="footer-brand-title">EJ’S KITCHEN</div>
+          </div>
+          <div class="footer-tagline">Baked with Love.</div>
+          <div class="footer-location-tag">
+            <span>📍 Al Rehman Garden Phase 2, Lahore</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-links-col">
+          <div class="footer-col-heading">NAVIGATION</div>
+          <ul class="footer-nav-list">
+            <li><a href="#hero" class="footer-nav-link">HOME</a></li>
+            <li><a href="#deals" class="footer-nav-link">DEALS</a></li>
+            <li><a href="#menu" class="footer-nav-link">MENU</a></li>
+            <li><a href="#kitchen" class="footer-nav-link">OUR KITCHEN</a></li>
+            <li><a href="#reviews" class="footer-nav-link">REVIEWS</a></li>
+          </ul>
+        </div>
+
+        <!-- Social & Direct Orders -->
+        <div class="footer-links-col">
+          <div class="footer-col-heading">CONTACT & SOCIAL</div>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://wa.me/923008884153?text=Hi%20EJ%27s%20Kitchen%21%20I%20would%20love%20to%20place%20an%20order." id="footerWhatsAppLink" target="_blank" rel="noopener noreferrer" class="footer-social-item-link" aria-label="Order on WhatsApp">
+                <span class="footer-social-icon-box wa-box">
+                  <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67"/>
+                    <path transform="translate(-1.8, -1.0)" d="M9.53 7.33C9.33 7.33 9 7.41 8.73 7.71C8.45 8.01 7.68 8.74 7.68 10.21C7.68 11.68 8.75 13.1 8.9 13.3C9.05 13.5 11.02 16.54 14.03 17.84C14.75 18.15 15.31 18.34 15.75 18.48C16.48 18.71 17.14 18.68 17.66 18.6C18.24 18.51 19.45 17.87 19.7 17.16C19.95 16.46 19.95 15.86 19.88 15.73C19.8 15.61 19.6 15.54 19.3 15.39C19 15.24 17.53 14.51 17.25 14.41C16.98 14.31 16.78 14.26 16.58 14.56C16.38 14.86 15.8 15.54 15.63 15.74C15.45 15.94 15.28 15.96 14.98 15.81C14.68 15.66 13.72 15.35 12.58 14.34C11.69 13.55 11.09 12.57 10.92 12.27C10.74 11.97 10.9 11.81 11.05 11.66C11.19 11.53 11.35 11.31 11.5 11.14C11.66 10.96 11.71 10.84 11.81 10.64C11.91 10.43 11.86 10.26 11.79 10.11C11.71 9.96 11.13 8.54 10.89 7.96C10.65 7.4 10.42 7.47 10.24 7.47C10.07 7.46 9.87 7.33 9.53 7.33Z"/>
+                  </svg>
+                </span>
+                <span>WhatsApp: 0300-8884153</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ejs.kitchen_/" target="_blank" rel="noopener noreferrer" class="footer-social-item-link" aria-label="Follow on Instagram">
+                <span class="footer-social-icon-box insta-box">
+                  <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </span>
+                <span>Instagram: @ejs.kitchen_</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/search/top?q=Ej%27s%20Kitchen" target="_blank" rel="noopener noreferrer" class="footer-social-item-link" aria-label="Visit Facebook Page">
+                <span class="footer-social-icon-box fb-box">
+                  <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </span>
+                <span>Facebook: Ej’s Kitchen</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span>© EJ’S KITCHEN. All rights reserved.</span>
+        <span class="footer-bottom-doodle">Baked with Love • Fresh • Hygienic • Homemade • Made to Order</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       14. PERSISTENT FLOATING WHATSAPP BUTTON
+       ======================================================================== -->
+  <a href="#" id="floatingWhatsAppBtn" class="floating-whatsapp-btn" aria-label="Get Yours on WhatsApp" data-action="whatsapp">
+    <svg class="floating-wa-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67"/>
+      <path transform="translate(-1.8, -1.0)" d="M9.53 7.33C9.33 7.33 9 7.41 8.73 7.71C8.45 8.01 7.68 8.74 7.68 10.21C7.68 11.68 8.75 13.1 8.9 13.3C9.05 13.5 11.02 16.54 14.03 17.84C14.75 18.15 15.31 18.34 15.75 18.48C16.48 18.71 17.14 18.68 17.66 18.6C18.24 18.51 19.45 17.87 19.7 17.16C19.95 16.46 19.95 15.86 19.88 15.73C19.8 15.61 19.6 15.54 19.3 15.39C19 15.24 17.53 14.51 17.25 14.41C16.98 14.31 16.78 14.26 16.58 14.56C16.38 14.86 15.8 15.54 15.63 15.74C15.45 15.94 15.28 15.96 14.98 15.81C14.68 15.66 13.72 15.35 12.58 14.34C11.69 13.55 11.09 12.57 10.92 12.27C10.74 11.97 10.9 11.81 11.05 11.66C11.19 11.53 11.35 11.31 11.5 11.14C11.66 10.96 11.71 10.84 11.81 10.64C11.91 10.43 11.86 10.26 11.79 10.11C11.71 9.96 11.13 8.54 10.89 7.96C10.65 7.4 10.42 7.47 10.24 7.47C10.07 7.46 9.87 7.33 9.53 7.33Z"/>
+    </svg>
+    <span class="floating-wa-text">GET YOURS</span>
+  </a>
+
+  <!-- ========================================================================
+       15. FULLSCREEN HIGH-RES IMAGE LIGHTBOX MODAL
+       ======================================================================== -->
+  <div id="imageLightboxModal" class="image-lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+      <button id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close image preview" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <div class="lightbox-image-wrapper">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="Full view preview">
+      </div>
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/menu-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu-app.js"></script>
+</body>
+</html>

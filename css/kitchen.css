@@ -1,0 +1,516 @@
+/* ==========================================================================
+   EJ'S KITCHEN - INSIDE OUR KITCHEN
+   Artisanal Culinary Showcase & Authentic Kitchen Stories
+   Full Image Integrity (Zero Cropping, 100% Natural Composition)
+   ========================================================================== */
+
+:root {
+  /* Food-Inspired Card Accent Themes */
+  --accent-pizza: #C85A32;
+  --accent-pizza-subtle: #FDF5EF;
+  --accent-pizza-border: rgba(200, 90, 50, 0.2);
+  --accent-pizza-glow: rgba(200, 90, 50, 0.12);
+
+  --accent-cupcake: #D66D80;
+  --accent-cupcake-subtle: #FDF3F5;
+  --accent-cupcake-border: rgba(214, 109, 128, 0.2);
+  --accent-cupcake-glow: rgba(214, 109, 128, 0.12);
+
+  --accent-cookie: #B36829;
+  --accent-cookie-subtle: #FDF6EC;
+  --accent-cookie-border: rgba(179, 104, 41, 0.2);
+  --accent-cookie-glow: rgba(179, 104, 41, 0.12);
+
+  --accent-fries: #C58326;
+  --accent-fries-subtle: #FDF7EC;
+  --accent-fries-border: rgba(197, 131, 38, 0.2);
+  --accent-fries-glow: rgba(197, 131, 38, 0.12);
+
+  --accent-cake: #86522E;
+  --accent-cake-subtle: #FAF3ED;
+  --accent-cake-border: rgba(134, 82, 46, 0.2);
+  --accent-cake-glow: rgba(134, 82, 46, 0.12);
+}
+
+.kitchen-section {
+  position: relative;
+  padding: var(--space-4xl) 0;
+  background: linear-gradient(180deg, #FDFBF7 0%, #FAF5EE 50%, #F5EFE6 100%);
+  border-top: 1px solid rgba(46, 27, 19, 0.06);
+  border-bottom: 1px solid rgba(46, 27, 19, 0.06);
+  overflow: hidden;
+}
+
+/* Ambient Section Glows */
+.kitchen-section::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 90, 50, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: var(--z-bg);
+}
+
+.kitchen-section::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  right: -10%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(214, 109, 128, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: var(--z-bg);
+}
+
+/* Section Header */
+.kitchen-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto var(--space-3xl);
+  padding: 0 var(--space-md);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.kitchen-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-2xs);
+  background: rgba(200, 109, 81, 0.08);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(200, 109, 81, 0.15);
+}
+
+.kitchen-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4vw, 3.3rem);
+  font-weight: var(--fw-bold);
+  color: var(--color-chocolate-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.kitchen-subtitle {
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.45rem, 2.3vw, 2rem);
+  color: var(--color-chocolate-medium);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.kitchen-intro-text {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  color: var(--color-chocolate-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   EDITORIAL FOOD GALLERY CONTAINER
+   ========================================================================== */
+.kitchen-editorial-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* Story Row */
+.kitchen-story-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Gallery Card Base */
+.kitchen-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(46, 27, 19, 0.09);
+  box-shadow: 0 10px 30px -6px rgba(46, 27, 19, 0.06), 0 2px 8px -2px rgba(46, 27, 19, 0.03);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-cinematic), box-shadow 0.4s var(--ease-cinematic), border-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Card Decorative Top Accent Line */
+.kitchen-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 5;
+  transition: height 0.3s ease;
+}
+
+.kitchen-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.13), 0 6px 16px -4px rgba(46, 27, 19, 0.05);
+}
+
+.kitchen-card:hover::before {
+  height: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   THEME-SPECIFIC CARD ACCENTS (Warm & Elegant Food Tones)
+   -------------------------------------------------------------------------- */
+
+/* 1. Artisan Pizza Theme */
+.card-theme-pizza::before {
+  background: linear-gradient(90deg, #C85A32 0%, #E27E5B 100%);
+}
+.card-theme-pizza .kitchen-card-media {
+  background: radial-gradient(ellipse at center, #FFFFFF 25%, var(--accent-pizza-subtle) 100%);
+}
+.card-theme-pizza .kitchen-card-tag {
+  color: var(--accent-pizza);
+}
+.card-theme-pizza .kitchen-step-dot {
+  background-color: var(--accent-pizza);
+}
+.card-theme-pizza:hover {
+  border-color: var(--accent-pizza-border);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.12), 0 0 0 1px var(--accent-pizza-border);
+}
+
+/* 2. Handcrafted Cupcake Studio Theme */
+.card-theme-cupcake::before {
+  background: linear-gradient(90deg, #D66D80 0%, #EBA2B0 100%);
+}
+.card-theme-cupcake .kitchen-card-media {
+  background: radial-gradient(ellipse at center, #FFFFFF 25%, var(--accent-cupcake-subtle) 100%);
+}
+.card-theme-cupcake .kitchen-card-tag {
+  color: var(--accent-cupcake);
+}
+.card-theme-cupcake .kitchen-step-dot {
+  background-color: var(--accent-cupcake);
+}
+.card-theme-cupcake:hover {
+  border-color: var(--accent-cupcake-border);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.12), 0 0 0 1px var(--accent-cupcake-border);
+}
+
+/* 3. Small-Batch Cookie Theme */
+.card-theme-cookie::before {
+  background: linear-gradient(90deg, #B36829 0%, #D8985C 100%);
+}
+.card-theme-cookie .kitchen-card-media {
+  background: radial-gradient(ellipse at center, #FFFFFF 25%, var(--accent-cookie-subtle) 100%);
+}
+.card-theme-cookie .kitchen-card-tag {
+  color: var(--accent-cookie);
+}
+.card-theme-cookie .kitchen-step-dot {
+  background-color: var(--accent-cookie);
+}
+.card-theme-cookie:hover {
+  border-color: var(--accent-cookie-border);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.12), 0 0 0 1px var(--accent-cookie-border);
+}
+
+/* 4. Golden Fries Theme */
+.card-theme-fries::before {
+  background: linear-gradient(90deg, #C58326 0%, #E4AF5E 100%);
+}
+.card-theme-fries .kitchen-card-media {
+  background: radial-gradient(ellipse at center, #FFFFFF 25%, var(--accent-fries-subtle) 100%);
+}
+.card-theme-fries .kitchen-card-tag {
+  color: var(--accent-fries);
+}
+.card-theme-fries .kitchen-step-dot {
+  background-color: var(--accent-fries);
+}
+.card-theme-fries:hover {
+  border-color: var(--accent-fries-border);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.12), 0 0 0 1px var(--accent-fries-border);
+}
+
+/* 5. Signature Cake Theme */
+.card-theme-cake::before {
+  background: linear-gradient(90deg, #86522E 0%, #B88059 100%);
+}
+.card-theme-cake .kitchen-card-media {
+  background: radial-gradient(ellipse at center, #FFFFFF 25%, var(--accent-cake-subtle) 100%);
+}
+.card-theme-cake .kitchen-card-tag {
+  color: var(--accent-cake);
+}
+.card-theme-cake .kitchen-step-dot {
+  background-color: var(--accent-cake);
+}
+.card-theme-cake:hover {
+  border-color: var(--accent-cake-border);
+  box-shadow: 0 20px 42px -10px rgba(46, 27, 19, 0.12), 0 0 0 1px var(--accent-cake-border);
+}
+
+/* Card Column Spans */
+.card-span-6 {
+  grid-column: span 6;
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA FRAMING: 100% UNTOUCHED IMAGE INTEGRITY (Zero Cropping)
+   -------------------------------------------------------------------------- */
+.kitchen-card-media {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  min-height: 380px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(46, 27, 19, 0.05);
+}
+
+.kitchen-card-media.media-tall {
+  min-height: 440px;
+}
+
+.kitchen-card-img {
+  max-width: 100%;
+  max-height: 420px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(46, 27, 19, 0.08);
+  box-shadow: 0 8px 24px -4px rgba(46, 27, 19, 0.09);
+  transition: transform 0.5s var(--ease-cinematic), box-shadow 0.4s ease;
+}
+
+.kitchen-card:hover .kitchen-card-img {
+  transform: scale(1.025);
+  box-shadow: 0 14px 32px -4px rgba(46, 27, 19, 0.15);
+}
+
+/* Zoom Hover Indicator */
+.kitchen-zoom-hint {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  background: rgba(35, 20, 14, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  padding: 0.38rem 0.85rem;
+  font-size: 0.73rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.kitchen-zoom-hint svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+.kitchen-card:hover .kitchen-zoom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Step Badge Over Image */
+.kitchen-step-pill {
+  position: absolute;
+  bottom: 1.15rem;
+  left: 1.15rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-chocolate-dark);
+  border: 1px solid rgba(46, 27, 19, 0.1);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 0.95rem;
+  font-size: 0.73rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 14px rgba(46, 27, 19, 0.08);
+  z-index: 3;
+}
+
+.kitchen-step-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   CARD CONTENT & EDITORIAL CAPTIONS
+   -------------------------------------------------------------------------- */
+.kitchen-card-body {
+  padding: 1.5rem 1.65rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #FFFFFF;
+}
+
+.kitchen-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.kitchen-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-chocolate-dark);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.kitchen-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-chocolate-medium);
+  line-height: 1.55;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .kitchen-story-row {
+    gap: 1.5rem;
+  }
+
+  .kitchen-card-media {
+    min-height: 350px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kitchen-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .kitchen-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .kitchen-editorial-feed {
+    gap: 1.5rem;
+  }
+
+  .kitchen-story-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-span-6 {
+    grid-column: span 1;
+  }
+
+  .kitchen-card-media {
+    min-height: 280px;
+    padding: 1rem;
+  }
+
+  .kitchen-card-media.media-tall {
+    min-height: 320px;
+  }
+
+  .kitchen-card-img {
+    max-height: 300px;
+  }
+
+  .kitchen-card-body {
+    padding: 1.25rem 1.35rem 1.45rem;
+  }
+
+  .kitchen-card-title {
+    font-size: 1.18rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kitchen-card-media {
+    min-height: 230px;
+    padding: 0.75rem;
+  }
+
+  .kitchen-card-media.media-tall {
+    min-height: 270px;
+  }
+
+  .kitchen-card-img {
+    max-height: 240px;
+  }
+
+  .kitchen-card-body {
+    padding: 1.05rem 1.1rem 1.2rem;
+  }
+
+  .kitchen-card-tag {
+    font-size: 0.7rem;
+  }
+
+  .kitchen-card-title {
+    font-size: 1.08rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .kitchen-card-desc {
+    font-size: 0.83rem;
+  }
+
+  .kitchen-step-pill {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.7rem;
+  }
+}

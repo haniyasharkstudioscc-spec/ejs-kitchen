@@ -1,0 +1,543 @@
+/* ==========================================================================
+   EJ'S KITCHEN - INSTAGRAM BANNER, FINAL CTA, FOOTER & FLOATING WHATSAPP
+   ========================================================================== */
+
+/* ==========================================================================
+   1. INSTAGRAM BANNER SECTION (Item 14)
+   ========================================================================== */
+.instagram-banner-section {
+  position: relative;
+  padding: 2.5rem 0;
+  background-color: var(--color-cream);
+  z-index: var(--z-content);
+}
+
+.instagram-banner-card {
+  background: linear-gradient(135deg, #FFF7F2 0%, #FAF0E6 100%);
+  border: 1px solid rgba(200, 109, 81, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-banner-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.instagram-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.instagram-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(221, 42, 123, 0.3);
+}
+
+.instagram-badge-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #FFFFFF;
+}
+
+.instagram-banner-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-chocolate-dark);
+  margin-bottom: 0.2rem;
+}
+
+.instagram-banner-desc {
+  font-size: 0.88rem;
+  color: var(--color-chocolate-medium);
+}
+
+.instagram-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.85rem;
+  background: var(--color-chocolate-dark);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.instagram-cta-btn:hover {
+  background: var(--color-terracotta);
+  transform: translateY(-2px);
+}
+
+.instagram-cta-btn .btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.instagram-cta-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   2. FINAL CINEMATIC ORDER CTA
+   ========================================================================== */
+.final-cta-section {
+  position: relative;
+  padding: var(--space-4xl) 0 calc(var(--space-4xl) + 1rem);
+  background-color: var(--color-chocolate-dark);
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.final-cta-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-bg);
+}
+
+.final-cta-bg-gradient {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #3E2419 0%, #23140E 75%, #180D09 100%);
+  opacity: 0.95;
+}
+
+.final-cta-grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.5;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.final-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-dusty-rose);
+  margin-bottom: 0.75rem;
+}
+
+.final-cta-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.final-cta-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--color-rose-light);
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto var(--space-2xl);
+  font-weight: var(--fw-regular);
+}
+
+/* WhatsApp CTA Button */
+.final-cta-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.05rem 2.5rem;
+  font-size: 0.95rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #FFFFFF;
+  background-color: var(--color-whatsapp-dark);
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+}
+
+.final-cta-btn-whatsapp .whatsapp-icon,
+.final-cta-btn-whatsapp .whatsapp-icon-img {
+  width: 22px;
+  height: 22px;
+  fill: #FFFFFF;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  transform: none;
+}
+
+.final-cta-btn-whatsapp span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.final-cta-btn-whatsapp .btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 1.15rem;
+  transition: transform var(--transition-fast);
+}
+
+.final-cta-btn-whatsapp:hover {
+  background-color: var(--color-whatsapp);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 38px rgba(37, 211, 102, 0.45);
+}
+
+.final-cta-btn-whatsapp:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   3. MINIMAL LUXURY FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: #1A0D08;
+  color: var(--color-beige);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.footer-brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+}
+
+.footer-tagline {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--color-dusty-rose);
+  margin-bottom: 0.6rem;
+}
+
+.footer-location-tag {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  color: var(--color-cream);
+  text-transform: uppercase;
+}
+
+.footer-col-heading {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-dusty-rose);
+  margin-bottom: 1.2rem;
+}
+
+.footer-nav-list,
+.footer-social-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-nav-link,
+.footer-social-item-link {
+  font-size: 0.85rem;
+  color: rgba(253, 251, 247, 0.75);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-social-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  color: #FFFFFF;
+}
+
+.footer-social-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.footer-social-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.footer-social-item-link:hover {
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+.footer-social-item-link:hover .footer-social-icon-box.wa-box {
+  background: var(--color-whatsapp-dark);
+  border-color: var(--color-whatsapp);
+}
+
+.footer-social-item-link:hover .footer-social-icon-box.insta-box {
+  background: #E1306C;
+  border-color: #FD1D1D;
+}
+
+.footer-social-item-link:hover .footer-social-icon-box.fb-box {
+  background: #1877F2;
+  border-color: #1877F2;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  font-size: 0.78rem;
+  color: rgba(253, 251, 247, 0.5);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-doodle {
+  font-family: var(--font-handwritten);
+  font-size: 1.05rem;
+  color: var(--color-dusty-rose);
+}
+
+/* ==========================================================================
+   4. PERSISTENT FLOATING WHATSAPP BUTTON (Item 16)
+   ========================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: var(--z-navbar);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.35rem;
+  line-height: 1;
+  background-color: var(--color-whatsapp-dark);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+}
+
+.floating-wa-icon,
+.floating-wa-icon-img {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  transform: none;
+}
+
+.floating-wa-text {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.floating-whatsapp-btn:hover {
+  background-color: var(--color-whatsapp);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.5);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand-col {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .final-cta-section {
+    padding: 4.5rem 0 3.5rem;
+  }
+
+  .final-cta-inner {
+    padding: 0 var(--space-md);
+  }
+
+  .final-cta-heading {
+    font-size: clamp(2rem, 7vw, 2.9rem);
+  }
+
+  .final-cta-subtitle {
+    margin-bottom: var(--space-xl);
+    font-size: 0.95rem;
+  }
+
+  .site-footer {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .floating-wa-text {
+    display: none;
+  }
+
+  .floating-whatsapp-btn {
+    padding: 0.85rem;
+    border-radius: 50%;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-cta-section {
+    padding: 3.8rem 0 3rem;
+  }
+
+  .final-cta-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.5rem;
+  }
+
+  .final-cta-heading {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+  }
+
+  .final-cta-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .final-cta-btn-whatsapp {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.95rem 1.6rem;
+    font-size: 0.88rem;
+  }
+
+  .site-footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-brand-title {
+    font-size: 1.2rem;
+  }
+
+  .footer-tagline {
+    font-size: 1.15rem;
+  }
+
+  .footer-location-tag {
+    font-size: 0.72rem;
+  }
+
+  .footer-social-item-link,
+  .footer-nav-link {
+    font-size: 0.82rem;
+  }
+
+  .floating-whatsapp-btn {
+    bottom: 1.1rem;
+    right: 1.1rem;
+    padding: 0.8rem;
+  }
+}

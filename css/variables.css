@@ -1,0 +1,109 @@
+/* ==========================================================================
+   EJ'S KITCHEN - DESIGN SYSTEM & TOKENS (PART 1)
+   Warm, Cute, Editorial, Homemade Luxury Food Identity
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-cream: #FAF7F2;
+  --color-ivory: #FDFBF7;
+  --color-cream-subtle: #F5EFE6;
+  --color-beige: #EFE6D8;
+  --color-beige-dark: #DECDB8;
+  
+  /* Chocolate Brown Scale (Replaces harsh black) */
+  --color-chocolate-dark: #23140E;
+  --color-chocolate: #2E1B13;
+  --color-chocolate-medium: #4A2F24;
+  --color-chocolate-light: #7A5747;
+  --color-chocolate-muted: #9E7D6F;
+  --color-chocolate-tint: rgba(46, 27, 19, 0.06);
+  --color-chocolate-tint-strong: rgba(46, 27, 19, 0.12);
+
+  /* Terracotta & Warm Accents */
+  --color-terracotta: #C86D51;
+  --color-terracotta-dark: #AF563C;
+  --color-terracotta-light: #DE886E;
+  --color-terracotta-soft: rgba(200, 109, 81, 0.12);
+
+  /* Dusty Rose & Soft Pink Accents */
+  --color-dusty-rose: #DF9B9B;
+  --color-rose-light: #F7E7E7;
+  --color-rose-soft: #FBF0F0;
+  
+  /* WhatsApp Brand Green */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+  --color-whatsapp-glow: rgba(37, 211, 102, 0.25);
+
+  /* UI Neutral Overlays */
+  --color-overlay-dark: rgba(35, 20, 14, 0.45);
+  --color-overlay-gradient: linear-gradient(
+    180deg,
+    rgba(35, 20, 14, 0.55) 0%,
+    rgba(35, 20, 14, 0.35) 40%,
+    rgba(35, 20, 14, 0.65) 100%
+  );
+  --color-overlay-card: rgba(253, 251, 247, 0.85);
+
+  /* Typography */
+  --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-handwritten: 'Caveat', 'Reenie Beanie', cursive;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* Spacing Scale */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* Border Radii (Soft, Organic curves) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Shadows (Warm, Soft, Tinted with Chocolate) */
+  --shadow-subtle: 0 4px 16px rgba(46, 27, 19, 0.05);
+  --shadow-sm: 0 6px 20px rgba(46, 27, 19, 0.08);
+  --shadow-md: 0 12px 32px rgba(46, 27, 19, 0.12);
+  --shadow-lg: 0 20px 48px rgba(46, 27, 19, 0.16);
+  --shadow-floating: 0 16px 36px -8px rgba(46, 27, 19, 0.22);
+  --shadow-glow-terracotta: 0 10px 28px rgba(200, 109, 81, 0.35);
+
+  /* Transitions & Easings */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-bounce-subtle: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.2s var(--ease-soft);
+  --transition-normal: 0.35s var(--ease-cinematic);
+  --transition-slow: 0.7s var(--ease-cinematic);
+
+  /* Layout Max Widths */
+  --container-max: 1320px;
+  --container-narrow: 1080px;
+
+  /* Z-Index Hierarchy */
+  --z-bg: 0;
+  --z-content: 10;
+  --z-doodle: 15;
+  --z-navbar: 100;
+  --z-mobile-menu: 200;
+  --z-cursor: 900;
+  --z-loader: 1000;
+  --z-modal: 99999;
+}
